@@ -6,6 +6,7 @@ services:
     develop:
       watch:
         - action: rebuild
+          path: .
           files:
             - ./frontend/**/*.go
             - ./frontend/go.mod
@@ -22,18 +23,19 @@ services:
         condition: service_healthy
       # redis:
       #   condition: service_healthy
-      vault:
-        condition: service_started # service_healthy
+      # vault:
+        # condition: service_started # service_healthy
     networks:
       - assessment-network
     ports:
-      - 8080:8080
+      - "8080:8080"
 
   worker-service:
     build: ./worker/
     develop:
       watch:
         - action: rebuild
+          path: .
           files:
             - ./worker/**/*.go
             - ./worker/go.mod
@@ -50,8 +52,8 @@ services:
         condition: service_healthy
       # redis:
       #   condition: service_healthy
-      vault:
-        condition: service_started # service_healthy
+      # vault:
+        # condition: service_started # service_healthy
     networks:
       - assessment-network
 
@@ -107,7 +109,7 @@ services:
     networks:
       - assessment-network
     ports:
-      - 5432:5432
+      - "5432:5432"
     expose:
       - 5432
 
