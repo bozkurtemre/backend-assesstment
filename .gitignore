@@ -6,3 +6,6 @@ Thumbs.db
 
 # GoLand files
 .idea/
+
+# Visual Studio Code files
+.vscode/
