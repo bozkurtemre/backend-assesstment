@@ -29,7 +29,7 @@ func (h *Handler) ProcessEvents(c *fiber.Ctx) error {
 
 	var wg sync.WaitGroup
 	wg.Add(1)
-	go h.eventService.ProcessEvents(eventsRequest, &wg)
+	go h.eventService.AddEvents(eventsRequest, &wg)
 	wg.Wait()
 
 	return c.SendStatus(fiber.StatusOK)

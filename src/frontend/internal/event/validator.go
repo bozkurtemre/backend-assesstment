@@ -3,6 +3,7 @@ package event
 import (
 	"errors"
 	"strings"
+	"unicode"
 )
 
 const (
@@ -37,5 +38,15 @@ func isValidAmount(amount string) bool {
 }
 
 func isValidCurrency(currency string) bool {
-	return len(currency) == 3
+	if len(currency) != 3 {
+		return false
+	}
+
+	for _, char := range currency {
+		if !unicode.IsLetter(char) {
+			return false
+		}
+	}
+
+	return true
 }

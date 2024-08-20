@@ -13,5 +13,5 @@ func NewWalletService(walletRepository WalletRepository) *Service {
 }
 
 func (s *Service) GetUserWallets() (*[]Wallet, error) {
-	return s.walletRepository.GetUserWallets()
+	return s.walletRepository.FindAll()
 }
