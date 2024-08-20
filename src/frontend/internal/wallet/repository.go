@@ -9,14 +9,14 @@ type Repository struct {
 }
 
 type WalletRepository interface {
-	GetUserWallets() (*[]Wallet, error)
+	FindAll() (*[]Wallet, error)
 }
 
 func NewWalletRepository(db *gorm.DB) *Repository {
 	return &Repository{db}
 }
 
-func (r *Repository) GetUserWallets() (*[]Wallet, error) {
+func (r *Repository) FindAll() (*[]Wallet, error) {
 	var wallets []Wallet
 	r.db.Preload("Balances").Find(&wallets)
 

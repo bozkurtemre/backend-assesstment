@@ -2,16 +2,15 @@ package app
 
 import (
 	"log"
-	"os"
 
+	"github.com/bozkurtemre/backend-assesstment/src/frontend/internal/config"
+	"github.com/bozkurtemre/backend-assesstment/src/frontend/internal/database"
 	"github.com/bozkurtemre/backend-assesstment/src/frontend/internal/router"
-	"github.com/bozkurtemre/backend-assesstment/src/frontend/pkg/database"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/fiber/v2/middleware/requestid"
-	_ "github.com/joho/godotenv"
 )
 
 func Run() {
@@ -26,6 +25,6 @@ func Run() {
 	database.ConnectDB()
 	router.SetupRoutes(app)
 
-	port := ":" + os.Getenv("PORT")
+	port := ":" + config.Config("PORT")
 	log.Fatal(app.Listen(port))
 }

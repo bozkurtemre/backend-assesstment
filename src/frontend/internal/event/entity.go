@@ -7,13 +7,13 @@ import (
 )
 
 type Event struct {
-	ID         string     `gorm:"primaryKey" json:"-"`
-	App        string     `gorm:"not null" json:"app" validate:"required"`
-	Type       string     `gorm:"not null" json:"type" validate:"required"`
-	Time       time.Time  `gorm:"not null" json:"time" validate:"required"`
-	Meta       Meta       `gorm:"type:json;not null" json:"meta" validate:"required"`
-	Wallet     string     `gorm:"not null" json:"wallet" validate:"required"`
-	Attributes Attributes `gorm:"type:json;not null" json:"attributes" validate:"required"`
+	ID         string     `json:"-"`
+	App        string     `json:"app" validate:"required"`
+	Type       string     `json:"type" validate:"required"`
+	Time       time.Time  `json:"time" validate:"required"`
+	Meta       Meta       `json:"meta" validate:"required"`
+	Wallet     string     `json:"wallet" validate:"required"`
+	Attributes Attributes `json:"attributes" validate:"required"`
 	CreatedAt  time.Time  `json:"-"`
 	UpdatedAt  time.Time  `json:"-"`
 }
