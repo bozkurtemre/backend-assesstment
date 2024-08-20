@@ -9,3 +9,6 @@ Thumbs.db
 
 # Visual Studio Code files
 .vscode/
+
+# Log files
+*.log
