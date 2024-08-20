@@ -1,13 +1,9 @@
 package main
 
 import (
-	"log"
-
-	"github.com/gofiber/fiber/v2"
-	_ "github.com/joho/godotenv/autoload"
+	"github.com/bozkurtemre/backend-assesstment/src/worker/internal/app"
 )
 
 func main() {
-	app := fiber.New()
-	log.Fatal(app.Listen(":8080"))
+	app.Run()
 }
