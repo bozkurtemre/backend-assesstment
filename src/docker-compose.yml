@@ -50,6 +50,8 @@ services:
         condition: service_healthy
       # redis:
       #   condition: service_healthy
+    volumes:
+      - ./worker:/app
     networks:
       - assessment-network
 
@@ -124,8 +126,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-    # volumes:
-    #   - ./resources/init.sql:/docker-entrypoint-initdb.d/init.sql
+    volumes:
+      - ./resources/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - assessment-network
     ports:
