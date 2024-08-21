@@ -50,6 +50,9 @@ Now you can access the frontend application at `http://localhost:8080`.
    make run-test
    ```
 
+### API Collection
+Postman collection is included in the project for testing the API endpoints.
+
 ## License
 
 Licensed under [Apache 2.0](LICENSE).

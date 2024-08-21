@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "fa889bef-0b2d-4c02-839e-60a3a36a478b",
+		"name": "Backend Assestment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24199955"
+	},
+	"item": [
+		{
+			"name": "List Wallets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event Dispatch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"app\": \"01HPMTX8916FF4ABFBDESX1AGH\",\n            \"type\": \"BALANCE_INCREASE\",\n            \"time\": \"2024-02-12T11:50:40.280Z\",\n            \"meta\": {\n                \"user\": \"01HPMV114ZE7Z54M6XV8H4EEMB\"\n            },\n            \"wallet\": \"01HPMV01XPAXCG242W7SZWD0S5\",\n            \"attributes\": {\n                \"amount\": \"33.20\",\n                \"currency\": \"TRY\"\n            }\n        },\n        {\n            \"app\": \"01HPMTX8916FF4ABFBDESX1AGH\",\n            \"type\": \"BALANCE_DECREASE\",\n            \"time\": \"2024-02-12T11:50:40.281Z\",\n            \"meta\": {\n                \"user\": \"01HPMV114ZE7Z54M6XV8H4EEMB\"\n            },\n            \"wallet\": \"01HPMV01XPAXCG242W7SZWD0S5\",\n            \"attributes\": {\n                \"amount\": \"3.10\",\n                \"currency\": \"TRY\"\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		}
+	]
+}
