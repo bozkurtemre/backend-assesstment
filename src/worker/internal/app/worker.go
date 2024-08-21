@@ -16,7 +16,7 @@ import (
 func Run() {
 	loggerInstance, err := logger.NewLogger("events.log", "EVENT")
 	if err != nil {
-		log.Fatalf("Failed to create logger: %v", err)
+		log.Fatalf("failed to create logger: %v", err)
 	}
 	defer loggerInstance.Close()
 
@@ -28,12 +28,12 @@ func Run() {
 
 	pandaConsumer, err := consumer.NewPandaConsumer([]string{config.Config("BROKER_CONNSTR")}, eventService)
 	if err != nil {
-		log.Fatalf("Failed to create consumer: %v", err)
+		log.Fatalf("failed to create consumer: %v", err)
 	}
 
 	err = pandaConsumer.ConsumeData("user-wallet-events")
 	if err != nil {
-		log.Fatalf("Failed to consume data: %v", err)
+		log.Fatalf("failed to consume data: %v", err)
 	}
 
 	signals := make(chan os.Signal, 1)

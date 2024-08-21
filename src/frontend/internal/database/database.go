@@ -2,6 +2,7 @@ package database
 
 import (
 	"github.com/bozkurtemre/backend-assesstment/src/frontend/internal/config"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
