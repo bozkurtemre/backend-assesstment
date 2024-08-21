@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	EventTypeBalanceIncrease = "BALANCE_INCREASE"
-	EventTypeBalanceDecrease = "BALANCE_DECREASE"
+	ValidateBalanceIncrease = "BALANCE_INCREASE"
+	ValidateBalanceDecrease = "BALANCE_DECREASE"
 )
 
 var (
@@ -18,7 +18,7 @@ var (
 )
 
 func ValidateEvent(event Event) error {
-	if event.Type != EventTypeBalanceIncrease && event.Type != EventTypeBalanceDecrease {
+	if event.Type != ValidateBalanceIncrease && event.Type != ValidateBalanceDecrease {
 		return ErrInvalidEventType
 	}
 
