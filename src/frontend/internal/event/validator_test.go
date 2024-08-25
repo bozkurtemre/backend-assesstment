@@ -15,7 +15,7 @@ func TestValidateEvent(t *testing.T) {
 		{
 			name: "valid balance increase",
 			event: Event{
-				Type: EventTypeBalanceIncrease,
+				Type: ValidateBalanceIncrease,
 				Attributes: Attributes{
 					Amount:   "33.20",
 					Currency: "TRY",
@@ -26,7 +26,7 @@ func TestValidateEvent(t *testing.T) {
 		{
 			name: "valid balance decrease",
 			event: Event{
-				Type: EventTypeBalanceDecrease,
+				Type: ValidateBalanceDecrease,
 				Attributes: Attributes{
 					Amount:   "3.10",
 					Currency: "TRY",
@@ -48,7 +48,7 @@ func TestValidateEvent(t *testing.T) {
 		{
 			name: "invalid amount",
 			event: Event{
-				Type: EventTypeBalanceIncrease,
+				Type: ValidateBalanceIncrease,
 				Attributes: Attributes{
 					Amount:   "invalid_amount",
 					Currency: "TRY",
@@ -59,7 +59,7 @@ func TestValidateEvent(t *testing.T) {
 		{
 			name: "invalid currency",
 			event: Event{
-				Type: EventTypeBalanceIncrease,
+				Type: ValidateBalanceIncrease,
 				Attributes: Attributes{
 					Amount:   "33.20",
 					Currency: "TR",
@@ -70,7 +70,7 @@ func TestValidateEvent(t *testing.T) {
 		{
 			name: "invalid currency with non-letter characters",
 			event: Event{
-				Type: EventTypeBalanceIncrease,
+				Type: ValidateBalanceIncrease,
 				Attributes: Attributes{
 					Amount:   "3.10",
 					Currency: "US1",
